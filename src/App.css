@@ -1,37 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
 .App {
-  height: 100vh;
-  margin-top: 5em;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+box-sizing: border-box;  
+max-width: 55em;
+text-align: center;
+ margin:0 auto;
 }
-
-
-
 .App-header {
-  width: 550px;
+  font-family: 'Mochiy Pop P One', sans-serif;
+  font-weight: 400;
+  letter-spacing: .3em;
   background-color: #393e49;
   font-size: calc(10px + 2vmin);
   color: white;
+  text-align: center;
 }
-
 .wrapper-content{
-  width: 550px;
-  height: 500px;
   background-color: rgb(47, 135, 146);
 }
-
-
-
-.meme {
+.meme-content{
+  text-align: center;
+  width: 60%;
+  margin:0 auto;
+}
+.meme{
+ 
   position: relative;
 }
-
 .meme-image {
- width: 90%;
- height: 380px;
- border-radius: 3px;
+  position: relative;
+  width: 100%;
 }
 
 .meme-text {
@@ -62,20 +59,107 @@
 .bottom {
   bottom: 0;
 }
-
 .top {
   top: 0;
 }
 .inputs{
-  
+
+
 }
 .inputs input{
-  padding: 10px 15px;
-  margin: 10px 10px;
+  padding: .5em .2em;
+  margin:1em
  
 }
 .inputs button{
-  margin-top: 10px;
-margin-bottom: 0;
-  padding: 15px 196px;
+  transition: 0.15s all ease-in-out;
+  cursor: pointer;
+  background: black;
+  color: #fff;
+  border-radius: .2em;
+  border: none;
+  font-size: 1em;
+  padding: .5em 1.5em;
+  margin: 1em;
+  text-decoration: none; 
+}
+
+
+.btn-download {
+	display: inline-block;
+	position: relative;
+	padding: .5em 1em;
+  margin:1em;
+	background-color: #e8edf348;
+	color: white;
+	font-size: .9em;
+	text-align: center;
+	text-indent: 1.8em;
+}
+
+.btn-download:hover {
+	background-color: #333;
+	color: white;
+}
+
+.btn-download:before, .btn-download:after {
+	content: ' ';
+	display: block;
+	position: absolute;
+	left: 1em;
+	top: 52%;
+}
+
+/* Download box shape  */
+.btn-download:before {
+	width: 10px;
+	height: 2px;
+	border-style: solid;
+	border-width: 0 2px 2px;
+}
+
+/* Download arrow shape */
+.btn-download:after {
+	width: 0;
+	height: 0;
+	margin-left: .15em;
+	margin-top: -.3em;
+	border-style: solid;
+	border-width: .3em .3em 0 .3em;
+	border-color: transparent;
+	border-top-color: inherit;
+	animation: downloadArrow 2s linear infinite;
+	animation-play-state: paused;
+}
+
+.btn-download:hover:before {
+	border-color: #8b9b84;
+}
+
+.btn-download:hover:after {
+	border-top-color: #8b9b84;
+	animation-play-state: running;
+}
+
+/* keyframes for the download icon anim */
+@keyframes downloadArrow {
+	/* 0% and 0.001% keyframes used as a hackish way of having the button frozen on a nice looking frame by default */
+	0% {
+		margin-top: -7px;
+		opacity: 1;
+	}
+	
+	0.001% {
+		margin-top: -15px;
+		opacity: 0;
+	}
+	
+	50% {
+		opacity: 1;
+	}
+	
+	100% {
+		margin-top: 0;
+		opacity: 0;
+	}
 }

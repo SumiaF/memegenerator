@@ -47,7 +47,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Meme Fun</p>
+        <h1>Meme Fun</h1>
       </header>
       <div className="wrapper-content">
         <div className="inputs">
@@ -89,7 +89,7 @@ function App() {
               className="btn-download"
               onClick={() => exportComponentAsPNG(refDiv)}
             >
-             as PNG
+              as PNG
             </button>
           </div>
         </div>

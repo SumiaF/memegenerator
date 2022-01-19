@@ -4,18 +4,24 @@ box-sizing: border-box;
 max-width: 55em;
 text-align: center;
  margin:0 auto;
+border:5px solid rgba(126, 41, 100, 0.795);
+border-radius: .5em;
+}
+h1{
+  margin-top: 0;
+
 }
 .App-header {
+  
   font-family: 'Mochiy Pop P One', sans-serif;
   font-weight: 400;
-  letter-spacing: .3em;
-  background-color: #393e49;
-  font-size: calc(10px + 2vmin);
+  letter-spacing: .2em;
+  background: linear-gradient(45deg,rgba(184, 34, 159, 0.691) 45%, #b82b5a);
+  font-size: 2em;
   color: white;
   text-align: center;
 }
 .wrapper-content{
-  background-color: rgb(47, 135, 146);
 }
 .meme-content{
   text-align: center;
@@ -74,7 +80,7 @@ text-align: center;
 .inputs button{
   transition: 0.15s all ease-in-out;
   cursor: pointer;
-  background: black;
+  background-color:#b82b5a;
   color: #fff;
   border-radius: .2em;
   border: none;
@@ -86,11 +92,10 @@ text-align: center;
 
 
 .btn-download {
-	display: inline-block;
 	position: relative;
 	padding: .5em 1em;
   margin:1em;
-	background-color: #e8edf348;
+  background-color:#b82b5a;
 	color: white;
 	font-size: .9em;
 	text-align: center;
@@ -110,7 +115,7 @@ text-align: center;
 	top: 52%;
 }
 
-/* Download box shape  */
+/* box  */
 .btn-download:before {
 	width: 10px;
 	height: 2px;
@@ -118,7 +123,7 @@ text-align: center;
 	border-width: 0 2px 2px;
 }
 
-/* Download arrow shape */
+/* arrow  */
 .btn-download:after {
 	width: 0;
 	height: 0;
@@ -133,11 +138,11 @@ text-align: center;
 }
 
 .btn-download:hover:before {
-	border-color: #8b9b84;
+	border-color: #fff;
 }
 
 .btn-download:hover:after {
-	border-top-color: #8b9b84;
+	border-top-color: #fff;
 	animation-play-state: running;
 }
 

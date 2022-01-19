@@ -1,8 +1,12 @@
 import "./App.css";
-import react from "react";
+import react, { createRef } from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import {
+  exportComponentAsJPEG,
+  exportComponentAsPNG,
+} from "react-component-export-image";
 
 function App() {
   const url = "https://api.imgflip.com/get_memes";
@@ -22,7 +26,6 @@ function App() {
 
   function getMemeImage() {
     const memeArray = memesData;
-
     const randonNumber = Math.floor(Math.random() * memeArray.length);
 
     const imageUrl = memeArray[randonNumber].url;
@@ -39,11 +42,12 @@ function App() {
       [name]: value,
     }));
   }
+  const refDiv = createRef();
 
   return (
     <div className="App">
       <header className="App-header">
-        <p>Meme Fun Game</p>
+        <p>Meme Fun</p>
       </header>
       <div className="wrapper-content">
         <div className="inputs">
@@ -67,10 +71,27 @@ function App() {
             Get a new image
           </button>
         </div>
-        <div className="meme">
-          <h2 className="meme-text top">{meme.topText}</h2>
-          <img className="meme-image" src={meme.randomImage} />
-          <h2 className="meme-text bottom">{meme.bottomText}</h2>
+        <div className="meme-content">
+          <div className="meme" ref={refDiv}>
+            <img className="meme-image" src={meme.randomImage} width="100" />
+            <h2 className="meme-text bottom">{meme.bottomText}</h2>
+            <h2 className="meme-text top">{meme.topText}</h2>
+          </div>
+          <div className="meme-download">
+            <button
+              className="btn-download"
+              onClick={() => exportComponentAsJPEG(refDiv)}
+            >
+              as JPEG
+            </button>
+
+            <button
+              className="btn-download"
+              onClick={() => exportComponentAsPNG(refDiv)}
+            >
+             as PNG
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -78,4 +99,3 @@ function App() {
 }
 
 export default App;
-//onClick={()=>getMemeImage} why does not work here?
